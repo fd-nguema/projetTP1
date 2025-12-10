@@ -3,17 +3,18 @@
 
 #include <string>
 #include "Date.h"
+#include "Author.h"
 
 class Book{
     private:
         std::string title_;
-        std::string author_;
+        Author author_;
         std::string genre_;
         Date publication_date_;
         std::string isbn_;
     
     public:
-        Book(const std::string& title, const std::string& author, const std::string& genre, 
+        Book(const std::string& title, const Author& author, const std::string& genre, 
             const Date& publication_date, const std::string& isbn);
         std::string title() const;
         std::string author() const;
