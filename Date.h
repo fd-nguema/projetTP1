@@ -11,6 +11,8 @@ class Date {
         int month() const;
         int year() const;
         std::string date() const;
+        bool operator < (const Date& other) const;
+        Date operator + (int days) const;
     private:
         int day_;
         int month_;
@@ -18,5 +20,6 @@ class Date {
 };
 
 bool isDate(int day, int month, int year);
+int get_days_in_month(int month);
 
 #endif
