@@ -9,6 +9,11 @@ bool isReader(const std::string& id, const std::string& firstname, const std::st
     return true;
 }
 
+std::ostream& operator << (std::ostream& os, const Reader& reader){
+    os << "id : " + reader.id() + " | " + "firstname : " + reader.firstname() + " | " + "lastname : " + reader.lastname() + " | " + "birthday : " + reader.birthday().date() + "\n";
+    return os;
+}
+
 Reader::Reader(const std::string& id, const std::string& firstname, const std::string& lastname, const Date& birthday, std::vector<std::string>& history) :
     id_(id), firstname_(firstname), lastname_(lastname), birthday_(birthday), history_(history)
 {
@@ -44,6 +49,6 @@ Date Reader::birthday() const{
     return birthday_;
 }
 
-std::vector<std::string> Reader::history() const{
+std::vector<std::string>& Reader::history() const{
     return history_;
 }

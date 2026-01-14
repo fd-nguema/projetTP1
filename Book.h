@@ -30,7 +30,7 @@ class Book{
         std::vector<Date>& borrowHistory() const;
 };
 
-bool isBook(const std::string& title, const Author& author, const std::string& genre, 
-            const Date& publication_date, const std::string& isbn);
+bool isBook(const std::string& title, const Author& author, const std::string& genre, const Date& publication_date, const std::string& isbn);
+std::ostream& operator << (std::ostream& os, const Book& book);
 
 #endif

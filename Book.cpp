@@ -9,6 +9,12 @@ bool isBook(const std::string& title, const Author& author, const std::string& g
     return true;
 }
 
+std::ostream& operator << (std::ostream& os, const Book& book) {
+    os << "title : " + book.title() + " | " + "author : " + book.author().firstname() + " " + book.author().lastname() + " | " + "genre : " + book.genre() + " | " + "publication date : " + book.publicationDate().date() + " | " + "isbn : " + book.isbn() + "\n";
+    return os;
+}
+
+
 Book::Book(const std::string& title, const Author& author, const std::string& genre, const Date& publication_date, const std::string& isbn, bool status, std::vector<Date>& borrow_history) : title_(title), author_(author), genre_(genre), publication_date_(publication_date), isbn_(isbn), status_(true), borrow_history_(borrow_history) {
     if (!(isBook(title, author, genre, publication_date, isbn))) 
         throw std::invalid_argument("Invalid Book :\n" + title + "\n" + author.firstname() + " " + author.lastname() + "\n" + genre + "\n" +

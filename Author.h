@@ -15,7 +15,10 @@ class Author{
         std::string id() const;
         std::string firstname() const;
         std::string lastname() const;
-        std::string birthday() const;    
+        Date birthday() const;    
     };
+
+bool isAuthor(const std::string& id, const std::string firstname, const std::string& lastname, const Date& birthday);
+std::ostream& operator << (std::ostream& os, const Author& author);
 
 #endif
